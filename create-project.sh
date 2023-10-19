@@ -1,0 +1,29 @@
+#!/bin/bash
+
+project_name=$1
+
+PATH_TO_DIR=""
+script_folder="$HOME/$PATH_TO_DIR/scaffold-three"
+
+npx create-vite@latest $project_name --template vanilla
+
+cd $project_name
+npm install
+npm install three
+
+rm -rf "./public"
+rm -f "main.js" "counter.js" "vite.config.js"
+rm -f "index.html" "style.css" "javascript.svg" "README.md"
+
+cp -r "$script_folder/template/." "./"
+
+pascal_case=$($script_folder/kebab-to-pascal.sh $project_name)
+$script_folder/replace-words.sh "./" "PASCAL_CASE_NAME" $pascal_case
+$script_folder/replace-words.sh "./" "KEBAB_CASE_NAME" $project_name
+
+git init .
+git add .
+git commit -m "initial commit"
+
+code .
+npm run dev
