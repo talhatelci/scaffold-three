@@ -2,7 +2,7 @@ import vertexShader from "./shaders/vertexShader.glsl?raw";
 import fragmentShader from "./shaders/fragmentShader.glsl?raw";
 import { PlaneGeometry, RawShaderMaterial, Mesh } from "three";
 
-const setObjects = (three) => {
+const setObjects = () => {
   let plane = new Mesh(
     new PlaneGeometry(1, 1),
     new RawShaderMaterial({
@@ -13,9 +13,9 @@ const setObjects = (three) => {
       fragmentShader,
     })
   );
-  three.scene.add(plane);
+  _three.scene.add(plane);
 
-  three.animate((elapsed) => {
+  _three.animate((elapsed) => {
     plane.material.uniforms.uTime.value = elapsed;
   });
 };

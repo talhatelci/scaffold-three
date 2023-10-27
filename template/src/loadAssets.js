@@ -1,11 +1,13 @@
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { TextureLoader, LoadingManager, CubeTextureLoader, RepeatWrapping } from "three";
 
+// Loaders
 const loadingManager = new LoadingManager();
 const gltfLoader = new GLTFLoader(loadingManager);
 const textureLoader = new TextureLoader(loadingManager);
 const cubeTextureLoader = new CubeTextureLoader(loadingManager);
 
+// Asset paths
 const modelFiles = {};
 
 const textureFiles = {};
@@ -19,7 +21,7 @@ const envmapFiles = [
   // "envmap/nz.png",
 ];
 
-const loadAssets = () => {
+const loadAssets = (callback) => {
   let models = {};
   let textures = {};
   let envmap;
@@ -59,7 +61,13 @@ const loadAssets = () => {
     }
   });
 
-  return promise;
+  promise
+    .then((data) => {
+      callback(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 export { loadAssets };

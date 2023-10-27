@@ -1,0 +1,3 @@
+const setLights = () => {};
+
+export { setLights };
