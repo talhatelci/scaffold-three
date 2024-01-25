@@ -1,3 +1,0 @@
-const setLights = () => {};
-
-export { setLights };

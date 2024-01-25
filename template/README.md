@@ -1,7 +1,7 @@
 ## Run Demo Locally
 
 ```bash
-git clone https://github.com/USER_NAME/KEBAB_CASE_NAME
+git clone https://github.com/talhatelci/KEBAB_CASE_NAME
 ```
 
 Go to the project directory

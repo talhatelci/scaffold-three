@@ -1,15 +1,15 @@
 import "./style.css";
-import { setThree } from "./setThree.js";
-import { loadAssets } from "./loadAssets.js";
-import { setInitialState } from "./setInitialState.js";
-import { setLights } from "./setLights.js";
-import { setObjects } from "./setObjects.js";
+import Three from "./js/Three.js";
+import Controls from "./js/Controls.js";
+import assets from "./js/assets.js";
+import AssetLoader from "./js/AssetLoader.js";
+import Environment from "./js/Environment.js";
+import World from "./js/World.js";
 
-window._three = setThree();
-
-loadAssets((assets) => {
-  _three.assets = assets;
-  setInitialState();
-  setLights();
-  setObjects();
+let three = new Three(document.getElementById("three"));
+let controls = new Controls(three);
+let assetLoader = new AssetLoader(assets);
+assetLoader.onLoad((loaded) => {
+  let environment = new Environment(three, loaded);
+  let world = new World(three, loaded);
 });

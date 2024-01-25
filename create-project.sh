@@ -10,6 +10,7 @@ npx create-vite@latest $project_name --template vanilla
 cd $project_name
 npm install
 npm install three
+npm install -D tailwindcss postcss autoprefixer prettier prettier-plugin-tailwindcss
 
 rm -rf "./public"
 rm -f "main.js" "counter.js" "vite.config.js"
