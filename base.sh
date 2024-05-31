@@ -1,7 +1,7 @@
 #!/bin/bash
 
 project_name=$1
-script_folder="$HOME/Talha/Bash/scaffold-three"
+script_folder="$HOME/{REPLACE_PATH_TO_FOLDER}/scaffold-three"
 
 npx create-vite@latest $project_name --template vanilla
 

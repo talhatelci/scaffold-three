@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$HOME/Talha/Bash/scaffold-three/base.sh $1
+$HOME/{REPLACE_PATH_TO_FOLDER}/scaffold-three/base.sh $1
