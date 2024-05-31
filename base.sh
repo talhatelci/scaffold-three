@@ -1,15 +1,13 @@
 #!/bin/bash
 
 project_name=$1
-
-PATH_TO_DIR=""
-script_folder="$HOME/$PATH_TO_DIR/scaffold-three"
+script_folder="$HOME/Talha/Bash/scaffold-three"
 
 npx create-vite@latest $project_name --template vanilla
 
 cd $project_name
 npm install
-npm install three
+npm install three vite-plugin-glsl
 npm install -D tailwindcss postcss autoprefixer prettier prettier-plugin-tailwindcss
 
 rm -rf "./public"

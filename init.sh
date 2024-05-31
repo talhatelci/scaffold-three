@@ -1,4 +1,3 @@
 #!/bin/bash
 
-PATH_TO_DIR=""
-$HOME/$PATH_TO_DIR/scaffold-three/create-project.sh $1
+$HOME/Talha/Bash/scaffold-three/base.sh $1

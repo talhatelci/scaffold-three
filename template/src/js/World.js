@@ -1,5 +1,5 @@
-import vs from "@/assets/vertexShader.glsl?raw";
-import fs from "@/assets/fragmentShader.glsl?raw";
+import vs from "@/assets/vs.glsl";
+import fs from "@/assets/fs.glsl";
 import * as THREE from "three";
 
 const params = {};
@@ -19,7 +19,7 @@ export default class World {
   setWorld() {
     let plane = new THREE.Mesh(
       new THREE.PlaneGeometry(1, 1),
-      new THREE.RawShaderMaterial({
+      new THREE.ShaderMaterial({
         vertexShader: vs,
         fragmentShader: fs,
         uniforms: {
@@ -28,7 +28,6 @@ export default class World {
       }),
     );
     this.three.scene.add(plane);
-
     this.three.onTick((elapsed) => {
       plane.material.uniforms.uTime.value = elapsed;
     });

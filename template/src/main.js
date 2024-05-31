@@ -7,9 +7,9 @@ import Environment from "./js/Environment.js";
 import World from "./js/World.js";
 
 let three = new Three(document.getElementById("three"));
-let controls = new Controls(three);
-let assetLoader = new AssetLoader(assets);
-assetLoader.onLoad((loaded) => {
-  let environment = new Environment(three, loaded);
-  let world = new World(three, loaded);
+three.controls = new Controls(three);
+three.assetLoader = new AssetLoader(assets);
+three.assetLoader.onLoad((loaded) => {
+  three.environment = new Environment(three, loaded);
+  three.world = new World(three, loaded);
 });

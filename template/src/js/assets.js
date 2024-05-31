@@ -12,12 +12,12 @@ const assets = [
   // {
   //   name: "envmap",
   //   url: [
-  //     "envmap/px.jpg",
-  //     "envmap/nx.jpg",
-  //     "envmap/py.jpg",
-  //     "envmap/ny.jpg",
-  //     "envmap/pz.jpg",
-  //     "envmap/nz.jpg",
+  //     "envmap/px.png",
+  //     "envmap/nx.png",
+  //     "envmap/py.png",
+  //     "envmap/ny.png",
+  //     "envmap/pz.png",
+  //     "envmap/nz.png",
   //   ],
   //   type: "cubeTexture",
   // },
